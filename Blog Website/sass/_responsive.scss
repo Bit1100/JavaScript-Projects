@@ -1,0 +1,231 @@
+//Home Page - md
+@include responsive(md) {
+    .menu-btn {
+        visibility: hidden;
+    }
+    .nav {
+        z-index: -999;
+        visibility: hidden;
+        .menu-nav {
+            visibility: visible;
+            display: block;
+            transform: translateY(0);
+            height: 7%;
+            background: transparent;
+            float: right;
+            &__item {
+                display: inline;
+                padding: .3rem;
+            }
+            &__link {
+                font-size: .7rem;
+                font-weight: bolder;
+                color: white;
+            }
+        }
+    }
+    .home {
+        .home__text {
+            .home__button__wrapper {
+                .btn {
+                    font-size: .6rem;
+                    border-radius: 50px;
+                }
+            }
+        }
+    }
+    .quiz {
+        .questions {
+            width: 65%;
+            .code {
+                .question {
+                    padding-left: 3rem;
+                    font-size: .6rem;
+                }
+            }
+            .buttons {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                gap: .5rem;
+            }
+        }
+    }
+    .btns {
+        margin-top: 3rem;
+        .btn_next {
+            margin-top: 0rem;
+        }
+    }
+    .home__img {
+        .image {
+            background: no-repeat center center/cover;
+            width: 100%;
+            height: 55vh;
+        }
+    }
+    .home__text__wrapper {
+        font-size: 1.5rem;
+    }
+    .home__button__wrapper {
+        .btn {
+            font-size: 1.8rem;
+        }
+    }
+    .content__img {
+        height: 50vh;
+    }
+    .content__text {
+        font-size: .9rem;
+        .btn {
+            width: 60%;
+            margin-left: 25%;
+        }
+    }
+    article * {
+        line-height: 1.2rem;
+    }
+}
+
+
+/* For lg-Screen */
+
+@include responsive(lg) {
+    .home {
+        .home__text {
+            .home__button__wrapper {
+                .btn {
+                    font-size: .8rem;
+                    border-radius: 75px;
+                }
+            }
+        }
+    }
+    .quiz {
+        .questions {
+            width: 70%;
+            .code {
+                .question {
+                    padding-left: 3rem;
+                    font-size: .8rem;
+                }
+            }
+            .buttons {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: .5rem;
+            }
+        }
+        .buttons {
+            .btn_next {
+                margin-top: 0rem;
+            }
+        }
+    }
+    .home__img {
+        .image {
+            background: no-repeat center center/cover;
+            width: 100%;
+            height: 60vh;
+        }
+    }
+    .home__text__wrapper {
+        font-size: 1.8rem;
+    }
+    .home__button__wrapper {
+        .btn {
+            font-size: 1.2rem;
+        }
+    }
+    .content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        &__img {
+            height: 100vh;
+        }
+        &__text {
+            font-size: .9rem;
+            .btn {
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
+    }
+    article * {
+        line-height: 1.3rem;
+    }
+}
+
+
+/* For xl Scrrens */
+
+@include responsive(xl) {
+    .home {
+        .home__text {
+            .home__button__wrapper {
+                .btn {
+                    font-size: .9rem;
+                    border-radius: 100px;
+                }
+            }
+        }
+    }
+    menu-nav__item {
+        display: inline;
+        padding: .4rem;
+    }
+    menu-nav__link {
+        font-size: .8rem;
+        font-weight: bolder;
+        color: white;
+    }
+    .quiz {
+        .questions {
+            width: 60%;
+            .code {
+                .question {
+                    padding-left: 3rem;
+                    font-size: 1rem;
+                }
+            }
+            .buttons {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: .5rem;
+            }
+        }
+    }
+    .btns {
+        margin-top: 2rem;
+        .btn_next {
+            margin-top: 0rem;
+        }
+    }
+    .home__img {
+        .image {
+            background: no-repeat center center/cover;
+            width: 100%;
+            height: 70vh;
+        }
+    }
+    .home__text__wrapper {
+        font-size: 2rem;
+    }
+    .home__button__wrapper {
+        .btn {
+            font-size: 1.5rem;
+        }
+    }
+    .content__text {
+        font-size: 1rem;
+        .btn {
+            width: 70%;
+            margin: 0 auto;
+        }
+        p {
+            line-height: 1rem;
+        }
+    }
+    article * {
+        line-height: 1.4rem;
+    }
+}

@@ -1,0 +1,38 @@
+.contact {
+    height: 100%;
+    padding-top: 30vh;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient( to left, rgba(grey, 0.1), rgba(brown, 0.8)), url("../img/suraj2.jpg") center;
+    background-size: cover;
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: rgb(32, 226, 32);
+    }
+    &__list {
+        display: grid;
+        grid-template-columns: 2fr;
+        grid-gap: .8rem;
+        font-size: 1.2rem;
+        line-height: 2;
+    }
+    &__list:hover {
+        color: rgb(229, 233, 17);
+    }
+    .social_icons {
+        position: initial;
+        margin-top: 2rem;
+        color: blue;
+        font-size: 1rem;
+    }
+    footer {
+        color: whitesmoke;
+        background: #000;
+        width: 100%;
+        text-align: center;
+        height: auto;
+    }
+}

@@ -1,0 +1,47 @@
+/* CSS RESETS */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+// Sass Variables
+$colors :( 'pri': red, 'sec':green, 'ter':rgb(48, 163, 230), 'wit':white, "blk":black);
+@function clr($col) {
+    @return map-get($colors, $col);
+}
+
+// SASS MAPS like Utility Classes 
+$font-sizes :( 'd3': 3rem, 'd2': 2rem, 'd1': 1rem, );
+//Functions in Sass
+@function fsz($fz) {
+    @return map-get($font-sizes, $fz);
+}
+
+//Mixin in Sass
+@mixin transition-ease {
+    transition: all .5s ease-out;
+}
+
+//Responsive
+$size_md:only screen and (min-width:6in);
+$size_lg:only screen and (min-width:8in);
+$size_xl:only screen and (min-width:11in);
+@mixin responsive($size) {
+    @if ($size==md) {
+        @media #{$size_md} {
+            @content;
+        }
+    }
+    @else if ($size==lg) {
+        @media #{$size_lg} {
+            @content;
+        }
+    }
+    @else {
+        @media #{$size_xl} {
+            @content;
+        }
+    }
+}

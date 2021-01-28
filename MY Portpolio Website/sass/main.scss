@@ -1,0 +1,61 @@
+@import "config";
+@import "home";
+@import "menu";
+@import "about";
+@import "contact";
+@import "project";
+@import "responsive";
+body {
+    background-color: clr('blk');
+    height: 100vh;
+    width: 100%;
+    color: clr('wit');
+    font-family: serif, Helvetica, sans-serif;
+    line-height: 1;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+}
+
+a {
+    color: clr("wit");
+    text-decoration: none;
+}
+
+header {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    padding: 1rem;
+    list-style: none;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    .social_icons {
+        position: fixed;
+        bottom: 0rem;
+        left: .1rem;
+        padding: .1rem;
+        a {
+            padding: -0.1rem;
+            color: clr("wit");
+            &:hover {
+                color: clr('sec');
+                @include transition-ease;
+            }
+        }
+    }
+    footer {
+        font-size: fs('ter');
+        position: fixed;
+        bottom: .1rem;
+        right: .4rem;
+        text-align: right;
+        color: clr('wit')
+    }
+}

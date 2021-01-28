@@ -1,0 +1,189 @@
+* {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+    animation: bodymove linear 3s infinte;
+}
+
+.sky {
+    height: 110vh;
+    width: 100%;
+    background: url("background.jpg") no-repeat;
+    position: absolute;
+}
+
+.info {
+    width: 80%;
+    color: black;
+    margin: 0 auto;
+    position: relative;
+    top: 16px;
+    font-weight: bolder;
+    font-size: 20px;
+    text-align: center;
+    animation: infosty linear 2s infinite alternate-reverse;
+}
+
+.tree {
+    height: 80vh;
+    width: 100%;
+    background: url(trees.png) no-repeat center;
+    background-size: cover;
+    position: absolute;
+    top: -11vh;
+}
+
+.track {
+    height: 46vh;
+    width: 600vw;
+    background: url(track.png);
+    background-size: cover;
+    position: absolute;
+    background-repeat: repeat-x;
+    top: 63vh;
+    animation: carmove linear 1s infinite alternate-reverse;
+}
+
+.car1 {
+    height: 100px;
+    width: 300px;
+    background: url(car.png) no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 300px;
+    bottom: 40vh;
+    animation: discocar1 linear 5s infinite;
+    filter: saturate(15.5);
+}
+
+.car2 {
+    height: 100px;
+    width: 300px;
+    background: url(car.png) no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 150px;
+    bottom: 15vh;
+    animation: discocar2 ease 5s infinite;
+    filter: hue-rotate(200deg);
+}
+
+.car3 {
+    height: 100px;
+    width: 300px;
+    background: url(car.png) no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 800px;
+    bottom: 35vh;
+    animation: discocar3 ease-in-out 5s infinite alternate-reverse;
+    filter: contrast(2000%);
+}
+
+.wheel1 img {
+    width: 77px;
+    position: relative;
+    top: 34px;
+    left: 38px;
+    animation: wheelRot linear .1s infinite;
+}
+
+.character {
+    width: 77px;
+    position: absolute;
+    top: 44px;
+    left: 133px;
+    font-weight: bolder;
+    font-size: 20px;
+    animation: scaleup linear 1s infinite alternate-reverse;
+}
+
+.wheel2 img {
+    width: 77px;
+    position: relative;
+    top: -44px;
+    left: 215px;
+    animation: wheelRot linear .1s infinite;
+}
+
+@keyframes carmove {
+    100% {
+        transform: translateX(-500vw);
+    }
+}
+
+@keyframes wheelRot {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes discocar1 {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(50px);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes discocar2 {
+    0% {
+        transform: translate(-20vw);
+    }
+    50% {
+        transform: translate(10vw);
+    }
+    100% {
+        transform: translate(100vw);
+    }
+}
+
+@keyframes discocar3 {
+    0% {
+        transform: translate(0px);
+    }
+    50% {
+        transform: translate(300px, 150px);
+    }
+    100% {
+        transform: translate(-80px, 150px);
+    }
+}
+
+@keyframes scaleup {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: skew(45deg);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes infosty {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: skew(90deg);
+    }
+    50% {
+        transform: translate(auto, auto);
+    }
+    75% {
+        transform: skew(720deg);
+    }
+    100% {
+        transform: scale(1.5);
+    }
+}

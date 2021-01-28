@@ -1,0 +1,206 @@
+*,
+ ::before,
+ ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Sass Variables 
+$pri-color:red;
+$sec-color:green;
+$ter-color:blue;
+$wit-color:white;
+$blk-color:black;
+$pale-color:yellow;
+// Sass Maps
+$colors:('p':$pri-color, 's':$sec-color, 't':$ter-color, 'w':$wit-color, 'b':$blk-color, 'y':$pale-color);
+// Sass Loops
+@each $c,
+$color in $colors {
+    .c-#{$c} {
+        color: $color;
+    }
+    .bg-#{$c} {
+        background-color: $color;
+    }
+}
+
+// SASS MAPS like Utility Classes 
+$number:(1, 2, 3, 4, 5);
+@each $d in $number {
+    // h#{$d} {
+    //     margin-bottom: #{$d}rem;
+    // }
+    .d-#{$d} {
+        font-size: #{$d}rem;
+    }
+    .m-#{$d} {
+        margin: #{$d}rem;
+    }
+    .p-#{$d} {
+        padding: #{$d}rem;
+    }
+    .mt-#{$d} {
+        margin-top: #{$d}rem;
+    }
+    .mb-#{$d} {
+        margin-bottom: #{$d}rem;
+    }
+    .mr-#{$d} {
+        margin-right: #{$d}rem;
+    }
+    .ml-#{$d} {
+        margin-left: #{$d}rem;
+    }
+    .mx-#{$d} {
+        margin: 0rem #{$d}rem;
+    }
+    .my-#{$d} {
+        margin: #{$d}rem 0rem;
+    }
+    .pt-#{$d} {
+        padding-top: #{$d}rem;
+    }
+    .pb-#{$d} {
+        padding-bottom: #{$d}rem;
+    }
+    .pr-#{$d} {
+        padding-right: #{$d}rem;
+    }
+    .pl-#{$d} {
+        padding-left: #{$d}rem;
+    }
+    .px-#{$d} {
+        padding: 0rem #{$d}rem;
+    }
+    .py-#{$d} {
+        padding: #{$d}rem 0rem;
+    }
+}
+
+.mx-auto {
+    margin: 0rem auto;
+}
+
+.my-auto {
+    margin: auto 0rem;
+}
+
+.px-auto {
+    padding: 0rem auto;
+}
+
+.py-auto {
+    margin: auto 0rem;
+}
+
+//Mixin in Sass
+@mixin transition-ease {
+    transition: all .5s ease-out;
+}
+
+body {
+    background: linear-gradient(to right, red, yellow, green);
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    color: black;
+    line-height: 1;
+    font-size: .8rem;
+    font-family: serif, Helvetica, sans-serif;
+    z-index: -1;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+hr {
+    width: 25%;
+    text-align: center;
+    height: 1rem;
+    border: 0;
+    // background-color: lighten(c('blk'), 50%);
+    border-radius: 1rem;
+}
+
+p {
+    margin-top: 0;
+    // margin-bottom: m('mb');
+    margin-bottom: .5rem;
+}
+
+.img {
+    padding: .25rem;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: .25rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.btn {
+    padding: 9px 33px;
+    border: 2px solid green;
+    background-color: black;
+    margin: 5px 2px;
+    font-size: .8rem;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    &:hover {
+        padding: 9px 33px;
+        border: 2px solid red;
+        background-color: yellow;
+        margin: 5px 2px;
+        border-radius: 10px;
+        color: rgb(29, 10, 10);
+        cursor: pointer;
+        text-align: center;
+    }
+}
+
+.center {
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 0rem;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 2ren;
+    width: 100%;
+}
+
+
+/* Media Queries with Mixin */
+
+$size_md:only screen and (min-width:6in);
+$size_lg:only screen and (min-width:8in);
+$size_xl:only screen and (min-width:10in);
+@mixin responsive($size) {
+    @if ($size==md) {
+        @media #{$size_md} {
+            @content;
+        }
+    }
+    @else if ($size==lg) {
+        @media #{$size_lg} {
+            @content;
+        }
+    }
+    @else {
+        @media #{$size_xl} {
+            @content;
+        }
+    }
+}

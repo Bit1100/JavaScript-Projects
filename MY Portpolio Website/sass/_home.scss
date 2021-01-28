@@ -1,0 +1,42 @@
+.home {
+    height: 100%;
+    padding-top: 40vh;
+    align-items: center;
+    overflow: hidden;
+    color: rgb(250, 247, 50);
+    text-align: center;
+    background: linear-gradient( to left, rgba(grey, 0.1), rgba(brown, 0.8)), url("../img/suraj2.jpg") center;
+    background-size: cover;
+    &__name {
+        font-size: 2rem;
+        padding: 1.3rem;
+        border-bottom: 3px solid clr('blk');
+        margin-bottom: 1rem;
+        line-height: 1.45rem;
+        &--last {
+            color: black;
+        }
+    }
+    h3 {
+        color: rgb(24, 37, 228);
+        font-size: 1rem;
+        margin: 1rem;
+        animation: scaleup 2s ease-in-out infinite alternate-reverse;
+    }
+    footer {
+        color: whitesmoke;
+        background: #000;
+        text-align: center;
+    }
+}
+
+@keyframes scaleup {
+    from {
+        opacity: .2;
+        transform: scale(1.2);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.6);
+    }
+}

@@ -1,0 +1,169 @@
+//MEDIUM DEVICES
+@include responsive(md) {
+    .menu-btn {
+        visibility: hidden;
+    }
+    .nav {
+        visibility: hidden;
+        z-index: -999;
+        .menu-nav {
+            visibility: visible;
+            display: block;
+            transform: translateY(0);
+            height: 7%;
+            background: transparent;
+            float: right;
+            &__item {
+                display: inline;
+                padding-right: .5rem;
+            }
+            &__link {
+                font-size: .8rem;
+                color: white;
+                font-weight: bolder;
+            }
+        }
+    }
+}
+
+@include responsive(lg) {
+    .home {
+        h3 {
+            font-size: 1.3rem;
+        }
+        h1 {
+            font-size: 2.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+    }
+    .menu-nav {
+        .menu-nav__link {
+            font-size: 1.1rem;
+        }
+    }
+    .projects {
+        &__bio-image {
+            height: 70vh;
+            background-size: center/cover;
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+        &__items {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.5rem auto;
+            .projects__item {
+                margin: 0rem auto;
+            }
+        }
+    }
+    .about {
+        &__bio-image {
+            height: 70vh;
+            background-size: cover;
+            font-size: 1.5rem;
+            p {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+        }
+        .jobs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            width: 80%;
+            margin: 1rem auto;
+            .jobs__job {
+                width: 100%;
+                margin: .5rem auto;
+            }
+        }
+    }
+    .contact {
+        h1 {
+            font-size: 2.3rem;
+        }
+        &__list {
+            font-size: 1.3rem;
+        }
+        footer {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+@include responsive(xl) {
+    .home {
+        h3 {
+            font-size: 2rem;
+            margin-top: 2rem;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+        h4 {
+            font-size: 1.8rem;
+        }
+    }
+    .menu-nav {
+        .menu-nav__link {
+            font-size: 1.3rem;
+        }
+    }
+    .projects {
+        &__bio-image {
+            height: 85vh;
+            background-size: center/cover;
+            h1 {
+                font-size: 2.8rem;
+            }
+        }
+        &__items {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.8rem;
+            width: 80%;
+            margin: 1.5rem auto;
+            .projects__item {
+                margin: 0rem auto;
+            }
+        }
+    }
+    .about {
+        &__bio-image {
+            height: 85vh;
+            background-size: cover;
+            font-size: 1.8rem;
+            p {
+                font-size: 1.3rem;
+                margin-bottom: 1.3rem;
+            }
+        }
+        .jobs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            width: 80%;
+            margin: 1rem auto;
+            .jobs__job {
+                width: 100%;
+                margin: .5rem auto;
+            }
+        }
+    }
+    .contact {
+        h1 {
+            font-size: 3rem;
+        }
+        &__list {
+            font-size: 2rem;
+        }
+        footer {
+            font-size: 2rem;
+        }
+    }
+}

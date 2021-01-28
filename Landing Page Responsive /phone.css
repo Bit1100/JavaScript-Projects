@@ -1,0 +1,138 @@
+/* Navigation section */
+
+#navbar {
+    height: 9rem;
+    flex-direction: column;
+    position: relative;
+}
+
+#navbar ul .item a {
+    font-size: 1rem;
+    padding: 0px 5px;
+}
+
+
+/* Home Section */
+
+#home {
+    height: 30rem;
+    padding: 3px 68px
+}
+
+#home::before {
+    height: 480px;
+}
+
+#home p {
+    font-size: 1rem;
+}
+
+
+/*services section */
+
+.services {
+    flex-direction: column;
+    height: 60rem;
+}
+
+.services .box {
+    border: 1px solid green;
+    margin: 5px 2px;
+    padding: 1px 2px;
+    border-radius: 2px;
+}
+
+.services .box img {
+    height: 100px;
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+
+
+/* Contact Section */
+
+#contact {
+    position: relative;
+    height: 22rem;
+    margin: 4px 0px 4px 0px;
+}
+
+#contact::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.6;
+    background: url("code7.jpg") no-repeat center center/cover;
+}
+
+.contact-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0px;
+}
+
+.contact-box input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: .5rem;
+    border-radius: 1px;
+    text-align: center;
+}
+
+.contact-box input:hover {
+    background-color: black;
+    color: white;
+}
+
+.contact-box form {
+    width: 50%;
+    padding: 0.3rem;
+}
+
+
+/*Footer Section*/
+
+footer {
+    background-color: black;
+    padding: 3px 5px;
+    color: white;
+    height: 3vh;
+    bottom: 0px;
+}
+
+
+/* Utility Classes */
+
+.h-primary {
+    font-size: 2rem;
+    padding: 2px;
+}
+
+.h-secondary {
+    font-size: 1.2rem;
+    padding: 1px;
+}
+
+.h-ternary {
+    font-size: 0.7rem;
+    padding: 1px;
+}
+
+.btn {
+    padding: 5px 3px;
+    border: 1px solid red;
+    background-color: green;
+    margin: 2px;
+    font-size: 1rem;
+    border-radius: 1px;
+    color: white;
+    cursor: pointer;
+}
+
+.center {
+    text-align: center;
+}

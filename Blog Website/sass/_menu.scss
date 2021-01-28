@@ -1,0 +1,123 @@
+.menu-btn {
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+    z-index: 1;
+    border: 2px solid rgb(0, 255, 0);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px gray;
+    @include transition-ease;
+    animation: scaleup 2s linear infinite alternate-reverse;
+    &__cross {
+        position: absolute;
+        background-color: white;
+        top: .8rem;
+        right: 0.3rem;
+        height: .2rem;
+        width: 1.2rem;
+        @include transition-ease;
+        &::before {
+            content: "";
+            position: absolute;
+            background-color: white;
+            top: -.5rem;
+            right: 0rem;
+            height: .2rem;
+            width: 1.2rem;
+            @include transition-ease;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            background-color: white;
+            top: .5rem;
+            right: 0rem;
+            height: .2rem;
+            width: 1.2rem;
+            @include transition-ease;
+        }
+        &.open {
+            transform: rotate(720deg);
+            background: transparent;
+            &::before {
+                width: 1.5rem;
+                transform: rotate(45deg) translate(8px, 5px);
+            }
+            &::after {
+                width: 1.5rem;
+                transform: rotate(-45deg) translate(8px, -3px);
+            }
+        }
+    }
+}
+
+@keyframes scaleup {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+
+/* Navbar */
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    visibility: hidden;
+    &.open {
+        visibility: visible;
+    }
+    .menu-nav {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        z-index: -1;
+        height: 100vh;
+        overflow: hidden;
+        background: black;
+        opacity: 1;
+        padding-right: 1rem;
+        transform: translateY(100%);
+        @include transition-ease;
+        &.open {
+            transform: translateY(0%);
+        }
+        &__item {
+            transform: translate(-100vw);
+            @include transition-ease;
+            &.open {
+                transform: translate(0);
+            }
+            &.active>a {
+                color: blue;
+            }
+        }
+        &__link {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            line-height: 3;
+            color: green;
+            @include transition-ease;
+            &:hover {
+                color: red;
+            }
+        }
+    }
+}
+
+@for $i from 1 through 4 {
+    .menu-nav__item:nth-child(#{$i}) {
+        transition-delay: ($i* 0.1s);
+    }
+}

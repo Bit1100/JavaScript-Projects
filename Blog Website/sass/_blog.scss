@@ -1,0 +1,26 @@
+.imiz {
+    background: url("../img/code3.jpg") center center/cover;
+    padding: 1rem;
+    overflow-y: hidden;
+    width: 100vw;
+    height: 50vh;
+}
+
+article {
+    display: grid;
+    grid-template-columns: 1fr .5in [start] 7.5in [end] .5in 1fr;
+    height: auto;
+    padding: 1rem 0;
+    background-color: white;
+}
+
+article * {
+    line-height: 1rem;
+    grid-column: start/end;
+}
+
+@media (max-width:8.5in) {
+    article {
+        grid-template-columns: 1fr 5% [start] 90% [end] 5% 1fr;
+    }
+}

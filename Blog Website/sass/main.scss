@@ -1,0 +1,16 @@
+@import 'config';
+@import 'menu';
+@import 'home';
+@import 'about';
+@import 'blog';
+@import 'responsive';
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}

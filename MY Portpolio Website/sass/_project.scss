@@ -1,0 +1,58 @@
+    .projects {
+        &__bio-image {
+            height: 50vh;
+            width: 100%;
+            background: linear-gradient( to left, rgba(red, 0.3), rgba(green, 0.4)), url("../img/suraj3.jpg");
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            color: clr('wit');
+        }
+        &__items {
+            width: 70vw;
+            margin: 1rem auto;
+            line-height: 1.3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            .projects__item {
+                margin: 1rem auto;
+                padding: .5rem;
+                border-bottom: 5px solid clr('pri');
+                background: lighten(clr('blk'), 20%);
+                img {
+                    width: 100%;
+                }
+                .projects__btns {
+                    position: relative;
+                    bottom: 0;
+                    height: auto;
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: repeat(2, 2fr);
+                    align-items: bottom;
+                    text-align: center;
+                    .projects__btn {
+                        color: skyblue;
+                        &:hover {
+                            opacity: 1;
+                            color: yellow;
+                        }
+                    }
+                }
+            }
+        }
+        .social_icons {
+            display: flex;
+            flex-direction: column;
+            color: white;
+        }
+        footer {
+            transform: rotate(90deg) translate3d(-3rem, -4rem, -3rem);
+            color: clr('wit');
+        }
+    }

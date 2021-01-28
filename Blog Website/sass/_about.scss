@@ -1,0 +1,25 @@
+.content {
+    display: grid;
+    grid-template-columns: 1fr;
+    &__img {
+        background: url("../img/suraj.jpg") center center/cover;
+        padding: 5rem;
+        overflow-y: hidden;
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: space-around;
+        padding: 2rem;
+        font-family: 'Times New Roman', Times;
+        text-align: center;
+        .btn {
+            width: 90%;
+            margin: 0 auto;
+        }
+        p {
+            line-height: .9rem;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+.box {
+  background: url("clock.png") no-repeat;
+  height: 40vw;
+  width: 40vw;
+  position: relative;
+  background-size: 100%;
+  margin: auto;
+  border: 2px dashed red;
+}
+
+.hour, .minute, .second {
+  position: absolute;
+  background: black;
+  border-radius: 10px;
+  opacity: 0.8;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+.hour {
+  width: 1.4%;
+  height: 22%;
+  top: 28%;
+  left: 49%;
+}
+
+.minute {
+  width: 1.2%;
+  height: 30%;
+  top: 20%;
+  left: 49%;
+}
+
+.second {
+  width: 1%;
+  height: 35%;
+  top: 15%;
+  left: 49%;
+}
+/*# sourceMappingURL=clock.css.map */

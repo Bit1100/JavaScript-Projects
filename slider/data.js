@@ -16,7 +16,7 @@ export const data = [
     {
         id: "Concepts",
         head1: "Learn Minimal Tools",
-        head2: "No Libraries & Framework Required",
+        head2: "No Libraries & Frameworks Required",
         head3: "First Only Learn Frontend",
         img: "./img/web6.jpg",
     },

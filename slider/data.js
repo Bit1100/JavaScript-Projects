@@ -3,7 +3,7 @@ export const data = [
         id: "Web Development",
         head1: "Concepts/Misconcepts",
         head2: "Tools",
-        head3: "Extra Stuffs->For Intermediates",
+        head3: "Extra Tools->For Intermediates",
         img: "./img/about.jpg",
     },
     {

@@ -1,0 +1,155 @@
+*,::before,::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background:url(./img/Bit.jpg) no-repeat center/cover,linear-gradient(60deg,red,brown,black);
+    background-blend-mode: multiply;
+    color:whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#people-section{
+    position: relative;
+    width:100%;
+    height:100%;
+    min-height: 85vh;
+    overflow:hidden;
+}
+.heading{
+    font-size:5.2rem;
+    color:rgba(255,255,255,.2);
+    background-image:url('img/fire3.jpg');
+    background-repeat:repeat-x;
+    background-clip:text;
+    background-size: contain;
+    animation:burn 15s infinite linear;
+    filter: drop-shadow(15px 15px 2px black);
+}
+.container{
+    color:white;
+}
+.slider-container{
+    position: absolute;
+    width:100%;
+    margin:1rem auto;
+    height:100%;
+    opacity:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow:column wrap;
+    transition:all 2s ease-in-out;
+    background-color:skyblue;
+    padding:2rem;
+    margin:1rem;
+}
+.active{
+    opacity:1;
+    transform:perspective(400px) translateX(0) rotateY(0deg);
+}
+.next{
+    transform:perspective(400px) translateX(100%) rotateY(360deg);
+}
+.last{
+    transform:perspective(400px) translateX(-100%) rotateY(-360deg);
+}
+.heading0{
+    background:linear-gradient(60deg,red,black,blue,skyblue);
+    font-size: 4.5rem;
+    color:gold;
+    background-color:black;
+    animation: opaque .5s step-start infinite alternate-reverse;
+}
+.common-heading{
+    background:linear-gradient(45deg, blue,brown,black);
+    color:gold;
+    font-size: 2rem;
+    margin:2rem;
+    transition:all 4s ease-in-out;
+    animation:skew 2s infinite alternate-reverse;
+}
+
+.headingId{
+    font-size: 5rem;
+    color:red;
+    position: absolute;
+    top:0%;
+    right:5%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.img{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index: -999;
+}
+/* Utility Classes */
+.center{
+    text-align: center;
+}
+.btn{
+    border:transparent;
+    background:rgba(0,0,0,.2);
+    font-size: 4rem;
+    padding:0rem 1rem;
+    cursor:pointer;
+    position:absolute;
+    z-index: 1111;
+    color:gold;
+    background: rgba(0,0,0,1);
+    border-radius: 50%;
+    display: none;
+}
+.container:hover .btn:first-of-type{
+    display: inline-block;
+    top:50%;
+    left:30.8%;
+}
+.container:hover .btn:last-of-type{
+    display: inline-block;
+    top:50%;
+    right:30%;
+}
+/* Animations  */
+@keyframes burn{
+    0%{
+        box-shadow: 4px 5px 30px 5px gold;
+        background-position: left 0px bottom  -15px;
+    }
+    50%{
+    box-shadow: -4px 5px 30px 5px yellow;
+background-position: left  130px bottom  -5px;
+    }
+    100%{
+    box-shadow: 4px 5px 30px 5px gold;
+  background-position: left  250px bottom  0px;
+    }
+}
+@keyframes skew{
+0%{
+   transform:scale(.6) skew(-10deg);
+}
+50%{
+    transform:scale(.8) skew(10deg);
+}
+100%{
+    transform:scale(1) skew(0deg);
+}
+
+}
+@keyframes opaque{
+    0%{
+        color:red;
+    }
+    50%{
+        color:orange;
+    }
+    100%{
+        color:gold;
+    }
+}

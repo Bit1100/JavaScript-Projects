@@ -1,0 +1,42 @@
+*,::before,::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.container{
+    width:100vw;
+    min-height:100vw;
+}
+.main-img{
+    width:100vw;
+    height:50vw;
+    object-fit:cover;
+}
+.images-section{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap:.1rem;
+    max-width:100vw;
+    padding:0% 10%;
+}
+.image{
+    width:100%;
+    height:30vh;
+    object-fit:fill;
+    background-color:brown;
+    background-blend-mode:luminosity;
+}
+.image:hover{
+    filter:opacity(.5);
+    cursor: pointer;
+}
+.fade-in{
+    opacity: 0;
+    animation:fadein .3s ease-in 1 forwards;
+}
+/* Animation */
+@keyframes fadein{
+    to{
+        opacity: 1;
+    }
+}

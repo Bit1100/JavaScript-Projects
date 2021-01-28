@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting List</title>
+    <style>
+        body {
+            background-color: black;
+            color: gold;
+            font-size: 1.5rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: gold;
+        }
+
+        .container {
+            display: grid;
+            place-items: center;
+        }
+
+        .form-items {
+            display: flex;
+            flex-direction: column;
+            margin: 1rem;
+        }
+
+        input {
+            padding: .5rem;
+            font-weight: bold;
+            text-align: center;
+            font-size: inherit;
+        }
+
+        label {
+            font-size: inherit;
+        }
+
+        .submit {
+            margin: 2rem;
+            font-weight: 800;
+        }
+
+        .submit:hover {
+            background-color: black;
+            color: gold;
+        }
+
+        .caption {
+            width: 100%;
+            font-size: 2rem;
+        }
+
+        .tbl-voterlist {
+            width: 100%;
+            margin-bottom: 5rem;
+            border-collapse: collapse;
+            position: relative;
+        }
+
+        .th {
+            padding: .5rem;
+            text-align: center;
+            border: 1px solid gold;
+            font-weight: bolder;
+        }
+
+        .td {
+            padding: .5rem;
+            text-align: center;
+            border: 1px solid gold;
+        }
+
+        .delbtn,
+        .editbtn {
+            background-color: #000;
+        }
+
+        .editbtn:hover,
+        .delbtn:hover {
+            background-color: gold;
+            color: black;
+            cursor: pointer;
+        }
+
+        .heading {
+            font-size: 4rem;
+        }
+
+        .success,
+        .failure {
+            padding: 1rem;
+            color: white;
+            margin: .5rem auto;
+        }
+
+        .success {
+            background-color: green;
+        }
+
+        .failure {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <h1 class="heading">
+            Voter List Form
+        </h1>
+        <form id="form" action="#">
+            <div class="form-items">
+                <label for="">Name</label>
+                <input name="name" placeholder="Enter your Name" type="text">
+            </div>
+            <div class="form-items">
+                <label for="">Phone</label>
+                <input name="phone" placeholder="Enter your Mobile Number" type="phone">
+            </div>
+            <div class="form-items">
+                <label for="">Age</label>
+                <input name="age" placeholder="Enter your Age" type="age">
+            </div>
+            <div class="form-items">
+                <label for="">City</label>
+                <input name="city" placeholder="Enter your City" type="city">
+            </div>
+            <div class="form-items">
+                <input type="submit" class="submit" value="Submit">
+            </div>
+        </form>
+        <table class="tbl-voterlist">
+            <caption class="caption">Voter List</caption>
+            <thead>
+                <tr class="tr">
+                    <th class="th">Name</th>
+                    <th class="th">Phone
+                    </th>
+                    <th class="th">Age</th>
+                    <th class="th">City</th>
+                    <th class="th">Edit</th>
+                    <th class="th">Delete</th>
+                </tr>
+            </thead>
+            <tbody class='voterlist'>
+            </tbody>
+        </table>
+
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

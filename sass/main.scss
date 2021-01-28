@@ -1,0 +1,35 @@
+@import "common";
+@import "base";
+@import "menu";
+@import "home";
+@import "blogs";
+@import "iblogs";
+@import "about";
+@import "signupin";
+
+
+header {
+    position: absolute;
+    width: 100%;
+    z-index: 111;
+}
+
+@font-face {
+    font-family: sansita;
+    src: url(../static/SansitaSwashed-Black.ttf);
+}
+
+@font-face {
+    font-family: open-sans;
+    src: url(../static/OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: ebg;
+    src: url(../static/EBGaramond-Regular.ttf);
+}
+
+@font-face {
+    font-family: rale;
+    src: url(../static/Raleway-Medium.ttf);
+}

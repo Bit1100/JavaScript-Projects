@@ -1,0 +1,133 @@
+/* About Page */
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    padding:1rem;
+    @include heading(150deg,0deg,bottom right)
+}
+
+.about-content-text {
+    margin: 1rem .5rem;
+      %commonImg{
+        display: block;
+        width:40vw;
+        height:30vh;
+        background-color:$lightBrown;
+        border-radius: 50%;
+      }
+      .aboutImg1{
+        @extend %commonImg;
+        float:left;
+      }
+      .aboutImg2{
+        @extend %commonImg;
+        float:right;
+      }
+    .btn {
+        display: block;
+        width: 80%;
+        margin:1rem auto;
+        font-size: 1.2rem;
+        padding:1.5rem;
+    }
+    %commonPara{
+        font-size: 1.3rem;
+        line-height: 2rem;
+        padding-left:1rem;
+        margin:50% 0% 10% 0%;
+    }
+    .para1 {
+        @extend %commonPara;
+    }
+    .para2 {
+        @extend %commonPara;
+    }
+}
+
+@include responsive(768px){
+    .about-content {
+      .heading{
+          margin:4.5rem;
+          font-size: 2.5rem;
+      }
+    }
+    .about-content-text {
+      margin:1rem;
+      %commonImg{
+        height:40vh;
+      }
+    .btn {
+        width: 50%;
+        margin:2rem auto;
+        font-size: 1.5rem;
+    }
+    %commonPara{
+      font-size: 1.5rem;
+      line-height:2.2rem;
+    }
+    .para1{
+      margin:35% 1rem 5% 1rem;
+    }
+    .para2{
+      margin:35% 1rem 10% 1rem;
+    }
+  }
+}
+@include responsive(1024px){
+  .about-content {
+    .heading{
+        margin:7rem;
+        font-size: 3.5rem;
+    }
+  }
+  .about-content-text {
+    %commonImg{
+      height:45vh;
+    }
+  .btn {
+      width: 40%;
+      margin:3rem auto;
+      font-size: 1.7rem;
+  }
+  %commonPara{
+    font-size: 1.7rem;
+    line-height:2.4rem;
+  }
+  .para1{
+    margin:32% 1rem 5% 1rem;
+  }
+  .para2{
+    margin:32% 1rem 12% 1rem;
+  }
+}
+}
+@include responsive(1500px){
+  .about-content {
+  .heading{
+      margin:9rem;
+      font-size:4rem;
+  }}
+  .about-content-text {
+    width:74%;
+    %commonImg{
+      width:60vh;
+      height:50vh;
+    }
+  .btn {
+      width: 35%;
+      font-size: 1.9rem;
+  }
+  %commonPara{
+    font-size: 1.5rem;
+    line-height:2.3rem;
+  }
+  .para1{
+    margin:28% 1rem 5% 1rem;
+  }
+  .para2{
+    margin:32% 1rem 12% 1rem;
+  }
+  }
+}

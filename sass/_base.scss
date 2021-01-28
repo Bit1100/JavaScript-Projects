@@ -1,0 +1,112 @@
+/* CSS Resets */
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body {
+    background-color: $lightSkyblue;
+    font-family: open-sans, serif, Helvetica, sans-serif;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    color: black;
+    line-height: 1;
+    font-size: 1rem;
+    z-index: -999;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+p {
+    margin: .6rem 0;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    margin: 0rem auto;
+    text-align: center;
+    font-size: 4vw;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+}
+@include responsive(1024px){
+    footer{
+        font-size:2vw;
+    }
+}
+@include responsive(1500px){
+    footer{
+        font-size:1.5vw;
+    }
+}
+
+/* Creating margins and padding using @for loop */
+
+$lst: (1,2,3,4,5);
+@each $i in $lst{
+    .m-#{$i}{
+        margin:#{$i}rem;
+    }
+    .my-#{$i}{
+        margin:#{$i}rem 0rem;
+    }
+    .mx-#{$i}{
+        margin:0rem #{$i}rem;
+    }
+    .mt-#{$i}{
+        margin-top:#{$i}rem;
+    }
+    .mb-#{$i}{
+        margin-bottom:#{$i}rem;
+    }
+    .mr-#{$i}{
+        margin-right:#{$i}rem;
+    }
+    .ml-#{$i}{
+        margin-left:#{$i}rem;
+    }
+    .p-#{$i}{
+        padding:#{$i}rem;
+    }
+    .py-#{$i}{
+        padding:#{$i}rem 0rem;
+    }
+    .px-#{$i}{
+        padding:#{$i}rem;
+    }
+    .pt-#{$i}{
+        padding-top:#{$i}rem;
+    }
+    .pb-#{$i}{
+        padding-bottom:#{$i}rem;
+    }
+    .pr-#{$i}{
+        padding-right:#{$i}rem;
+    }
+    .pl-#{$i}{
+        padding-left:#{$i}rem;
+    }
+}
+
+.mx-auto{
+    margin: 0rem auto;
+}
+.my-auto{
+    margin: auto 0rem;
+}
+.m-auto{
+    margin: auto;
+}

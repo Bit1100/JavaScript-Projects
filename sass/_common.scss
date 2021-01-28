@@ -1,0 +1,171 @@
+/* Variables */
+$gray:gray;
+$brown:brown;
+$lightBrown:lighten(brown,50%);
+$gold:gold;
+$lightGold:lighten(gold,20%);
+$blue:blue;
+$lightBlue:lighten(blue,40%);
+$orange:orange;
+$lightOrange:lighten(orange,20%);
+$black:black;
+$lightBlue:lighten(black,40%);
+$white:white;
+$darkWhite:darken(white,10%);
+$green:green;
+$lightGreen:lighten(green,50%);
+$red:red;
+$lightRed:lighten(red,30%);
+$skyblue:skyblue;
+$lightSkyblue:lighten(skyblue,10%);
+
+
+/* Common Classes */
+.center {
+    text-align: center;
+}
+.hide{
+    display: none;
+}
+.btn {
+    padding: 1rem;
+    border:5px solid $gold;
+    background-color: $black;
+    margin: 1rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    color:$gold;
+    font-weight:bold;
+    cursor: pointer;
+    text-align: center;
+    &:hover {
+       border-color:$black;
+       background-color: $lightGreen;
+       color:$black;
+    }
+}
+.valid{
+    border:5px solid $green;
+}
+.invalid{
+    border:5px solid $red;
+}
+/* flexBox Classes using mixin */
+@mixin flexCenter(){
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+@mixin flexColumn(){
+    display:flex;
+    align-items:center;
+    justify-content: flex-start;
+    flex-flow: column wrap;
+}
+/* Transition */
+@mixin transition($timeDelay){
+    transition: all $timeDelay ease-in-out;
+}
+/* Common heading class with extend and mixin */
+@mixin heading($degree1:90deg,$degree2:0deg,$transformOrigin:bottom right,$fontSize:1.5rem){
+    %transition{
+        border-radius: 20px;
+        font-size: $fontSize;
+        font-weight: bolder;
+        padding:1rem;
+    }
+    .heading {
+        @extend %transition;
+        border:2px solid black;
+        position: relative;
+        z-index: 0;
+        overflow:hidden;
+    }
+    .heading::before{
+        content: "";
+        @extend %transition;
+        width:100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include transition(.2s);
+        transform: rotate($degree1);
+        transform-origin: $transformOrigin;
+        z-index: -1;
+    }
+    .heading:hover:before {
+        background-color:$black;
+        transform: rotate($degree2);
+    }
+    .heading:hover{
+        color:$gold;
+        @include transition(.2s);
+        box-shadow: 3px 2px 2px 5px $lightBrown;
+}
+}
+/* Common Modal class using mixin */
+@mixin modal($width:99%,$topLeft:50%,$transX:0%,$transY:-100%,$deg:720deg){
+        .modal {
+            position: fixed;
+            top: $topLeft;
+            left: $topLeft;
+            transform: translate($transX, $transY) rotate($deg) scale(0);
+            @include transition(.5s);
+            background-color: $lightGreen;
+            width: $width;
+            z-index: 11111;
+        }
+
+        .modal-active {
+            transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        }
+
+        .modal-header {
+            border-bottom: 3px solid $black;
+            .heading {
+                text-align: center;
+                font-size: 2rem;
+                font-weight: 700;
+                padding: .6rem;
+            }
+        }
+
+        .modal-body {
+            padding:1rem .5rem;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, .7);
+            @include transition(.5s);
+            opacity: 0;
+            z-index: 11111;
+            pointer-events: none;
+        }
+
+        .overlay-active {
+            pointer-events: all;
+            opacity: 1;
+        }
+}
+/* Creating media query using @mixin*/
+@mixin responsive($width){
+    @if($width==768px){
+    @media only screen and (min-width: $width){
+        @content;
+    }
+    }@else if($width==1024px){
+       @media only screen and (min-width: $width){
+          @content;
+    }
+    }@else if($width==1500px){
+      @media only screen and (min-width: $width){
+          @content;
+    }
+  }
+}

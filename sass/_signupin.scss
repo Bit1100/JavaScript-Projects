@@ -1,0 +1,248 @@
+/* Register cum Login Page */
+.box{
+    display: grid;
+    height:100vh;
+    place-items: center;
+    grid-template-columns:repeat(auto-fit,minmax(450px,100%));
+    background-color:$lightGreen;
+    .form-center{
+        background-color:$lightSkyblue;
+        .form-items{
+            margin:1rem 0rem;
+        }
+    }
+}
+.form {
+    background-color:$lightSkyblue;
+    border: 2px solid $gold;
+    height: auto;
+    padding:1rem 0rem;
+}
+.grecaptcha-badge {
+    position: absolute;
+    top: 0px !important;
+}
+.indexError{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 111111;
+    position: absolute;
+    @include transition(.5s);
+    top:0%;
+    width: 30%;
+    padding:.3rem .8rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 20px;
+    background-color:$lightRed;
+    color:$black;
+    .btn{
+        font-size: 2rem;
+        padding:unset;
+        background-color: unset;
+        border:none;
+        outline:none;
+        color:$black;
+        &:hover{
+            color:$white;
+        }
+    }
+}
+.formErr{
+    width:fit-content;
+    font-weight: bold;
+    color:$brown;
+    font-size:1.5rem;
+    text-align: center;
+    border:3px solid $gold;
+    padding:.5rem;
+    border-radius: 20px;
+    background-color:$black;
+    color:$gold;
+}
+.form-items {
+    width: 100%;
+    display: grid;
+    grid-gap: .5rem;
+    place-items: center;
+    grid-template-rows: 1fr;
+    .error-section{
+        p{
+            font-size:1.2rem;
+        }
+    }
+    .submit {
+        animation: scaleup 2s linear infinite alternate-reverse;
+        &:hover {
+            color: $black;
+        }
+    }
+}
+
+.form-item:not(:last-child) {
+    width: 90%;
+    margin: 0.5rem auto;
+    @include flexCenter;
+    .img {
+        flex-basis: 20px;
+        height: 1.6rem;
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+    .input {
+        flex-grow: 1;
+        height: 1.6rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        width: 20%;
+    }
+}
+
+
+.fextra {
+    @include flexCenter;
+    font-size: 1.2rem;
+
+    .checkbox {
+        margin: 0 0.2rem;
+    }
+
+    .txt {
+        margin: 0 0.2rem;
+        font-size: 1.2rem;
+    }
+}
+
+@keyframes scaleup {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+@include responsive(768px){
+    .box{
+        grid-template-columns:repeat(auto-fit,minmax(600px,100%));
+        .form-center{
+            .heading{
+                font-size: 2.2rem;
+            }
+            .form-items{
+                margin:1.5rem 0rem;
+            }
+        }
+    }
+    .form {
+        padding:1.2rem .7rem;
+    }
+    .form-items {
+        .error-section{
+            p{
+                font-size:1.3rem;
+            }
+        }
+    }
+    .form-item:not(:last-child) {
+        width:85%;
+        margin: 0.7rem auto;
+        .img {
+            flex-basis: 25px;
+            height: 1.8rem;
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+        .input {
+            flex-grow: 1;
+            height: 1.8rem;
+            font-size: 1.3rem;
+        }
+    }
+    .fextra {
+        font-size: 1.3rem;
+        .txt {
+            margin: 0 0.3rem;
+            font-size: 1.3rem;
+        }
+    }
+}
+@include responsive(1024px){
+    .box{
+        .form-center{
+            .heading{
+                font-size: 2.4rem;
+            }
+            .form-items{
+                margin:1.8rem 0rem;
+            }
+        }
+    }
+    .form {
+        padding:1.3rem .8rem;
+    }
+    .form-items {
+        .error-section{
+            p{
+                font-size:1.4rem;
+            }
+        }
+    }
+    .form-item:not(:last-child) {
+        .img {
+            flex-basis: 28px;
+            height: 1.9rem;
+        }
+        .input {
+            flex-grow: 1;
+            height: 1.9rem;
+            font-size: 1.4rem;
+        }
+    }
+    .fextra {
+        font-size: 1.4rem;
+        .txt {
+            font-size: 1.4rem;
+        }
+    }
+}
+@include responsive(1500px){
+    .box{
+        .form-center{
+            .heading{
+                font-size: 2.6rem;
+            }
+            .form-items{
+                margin:2rem 0rem;
+            }
+        }
+    }
+    .form-items {
+        .error-section{
+            p{
+                font-size:1.5rem;
+            }
+        }
+    }
+    .form-item:not(:last-child) {
+        .img {
+            flex-basis: 30px;
+            height: 2rem;
+        }
+        .input {
+            flex-grow: 1;
+            height: 2rem;
+            font-size: 1.5rem;
+        }
+    }
+    .fextra {
+        font-size: 1.4rem;
+        .txt {
+            font-size: 1.5rem;
+        }
+    }
+}

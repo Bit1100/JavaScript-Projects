@@ -1,0 +1,14 @@
+
+
+What You'll Learn in this Power Packed Video
+
+
+1) Javascript ES6 features such as Variable Scope,Template String,Object Destructuring,Modules, async/await form of Promises
+
+2) How to send data via POST request through the Fetch() library
+
+3) How to connect with the database via PHP
+
+4) How to fetch files data other than form data in php requested via fetch() in Javascript.
+
+5) How to create and send response from the PHP to Javascript

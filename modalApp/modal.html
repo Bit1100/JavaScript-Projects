@@ -74,26 +74,26 @@
 <body>
     <div id="overlay" class="overlay"></div>
 
-    <button data-modal-target="#signupModal" class="open-modal">Signup</button>
+    <button aria-controls="signupModal" data-modal-target="#signupModal" class="open-modal">Signup</button>
 
-    <button data-modal-target="#loginModal" class="open-modal">Login</button>
+    <button id="loginModalButton"  data-modal-target="#loginModal" class="open-modal">Login</button>
 
     <div id="signupModal" class="modal">
         <header class="modal-header">
-            <div class="heading">SignUp Here</div>
+            <h1 class="heading">SignUp Here</div>
             <button data-close-button class="btn">&times</button>
         </header>
-        <div class="modal-body">
+        <div id="loginModal" class="modal-body">
             <form action="#" style="text-align:center;">
-                <input style="margin:1rem; padding:1rem;" placeholder="Enter your Name" type="text">
-                <input style="margin:1rem; padding:1rem;" placeholder="Enter your Email" type="email">
-                <input style="margin:1rem; padding:1rem;" placeholder="Enter your Phone" type="phone">
-                <input style="margin:1rem; padding:1rem;" placeholder="Enter your Address" type="address"><br>
+                <input style="margin:1rem; padding:1rem;" aria-label="text"  placeholder="Enter your Name" type="text">
+                <input style="margin:1rem; padding:1rem;" aria-label="email" placeholder="Enter your Email" type="email">
+                <input style="margin:1rem; padding:1rem;"  aria-label="phone" placeholder="Enter your Phone" type="phone">
+                <input style="margin:1rem; padding:1rem;"  aria-label="text" placeholder="Enter your Address" type="text"><br>
                 <button style="margin:1rem; padding:1rem;" class="btn">Submit</button>
             </form>
         </div>
     </div>
-    <div id="loginModal" class="modal">
+    <div aria-labelledby ="loginModalButton" class="modal">
         <header class="modal-header">
             <div class="heading">Login Here</div>
             <button data-close-button class="btn">&times</button>
@@ -112,6 +112,7 @@
         const openModalButtons = document.querySelectorAll('[data-modal-target]');
         const closeModalButtons = document.querySelectorAll('[data-close-button]');
         const overlay = document.getElementById('overlay');
+        
         openModalButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const modal = document.querySelector(button.dataset.modalTarget);
